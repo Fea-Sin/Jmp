@@ -1,8 +1,7 @@
-# plug in mode
+# Jmp (jquery multiple plugin)
 
 ## describe
-you can use this mode, development your jquery plug-in
-
+jquery plug-in collection
 
 ## start
 
@@ -12,4 +11,17 @@ npm install
 npm start
 ```
 
-> enjoy your jquery plugin development!
+## contain plugin
+
+- tool-tip
+- overflow-show
+
+## From sources
+```
+$ git clone https://github.com/Fea-Sin/Jmp.git
+$ cd Jmp
+$ npm install
+$ npm start
+```
+
+> Jmp one more!
