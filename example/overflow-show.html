@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>overflow-show</title>
+	<link rel="stylesheet" type="text/css" href="../src/css/font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../dist/css/style.min.css">
+	<script type="text/javascript" src="../src/js/vendor/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/js/plugin.min.js"></script>
+	<style type="text/css">
+		.box {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="overflow-show">
+			<span id="text">这里是测试 overflow-show 插件的文字，需要更多一点的文字来测试下会更好吗，这就不得而知了</span>
+		</div>
+	</div>
+	<div class="box">
+		<div class="overflow-show">
+			<span id="text">
+				这里是测试文字，所有的文字是都是汉字，没有英文的的单词在内面，这样的测试是跟有英文单词的内容做对比
+			</span>
+		</div>	
+	</div>
+	<div class="box">
+		<div class="overflow-show">
+			<span id="text">文字少的时候是？</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".overflow-show").overflowShow('init', {
+			"width": "20",
+			"popWidth": "450"
+		})
+	</script>
+</body>
+</html>

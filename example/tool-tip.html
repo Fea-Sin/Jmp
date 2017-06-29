@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tool-tip</title>
+	<link rel="stylesheet" type="text/css" href="../dist/css/style.min.css">
+	<script type="text/javascript" src="../src/js/vendor/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/js/plugin.min.js"></script>
+	<style type="text/css">
+		.box {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="tool-tip" id="tipOne">
+			<div id="oneTouch" class="tip-touch">
+				<div class="tooltip-button">
+					<span>this is a test!</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-left: 600px">
+		<div class="tool-tip" id="tipTwo">
+			<div id="twoTouch" class="tip-touch">
+				<div class="tooltip-button">
+					another test
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#tipOne").toolTip('init', {
+			"text": "这里是传入的提示文字信息！本来可以更长测试界面如何显示，以及后续需要如何改进。",
+			"width": "360"
+		})
+		$("#oneTouch").click(function() {
+			$("#tipOne").toolTip('hideShow')
+		})
+
+		$("#tipTwo").toolTip('init', {
+			"text": "这里是另一个测试，测试右侧模式",
+			"width": "300"
+		})
+		$("#twoTouch").click(function() {
+			$("#tipTwo").toolTip('hideShow')
+		})
+	</script>
+</body>
+</html>

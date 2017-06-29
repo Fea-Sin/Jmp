@@ -1,0 +1,53 @@
+@import 'variable';
+
+/*
+ * common
+ * 
+ */
+html, body {
+	margin: 0;
+	padding: 0;
+	color: @color;
+}
+
+// box shadow style
+.shadow-box {
+	box-shadow: 1px 1px 10px #dfdfdf;
+}
+
+.overflow-show {
+	display: inline-block;
+	cursor: pointer;
+	white-space: nowrap;
+	line-height: 1;
+	position: relative;
+	span {
+		display: inline-block;
+	}
+	#decoration {
+	}
+	#text {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&:hover {
+		#decoration {
+			color: @light-color
+		}
+	};
+}
+.pop-layer {
+	position: absolute;
+	width: 160px;
+	padding: 14px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	word-break: normal;
+	.shadow-box;
+	z-index: 100;	
+	background-color: #fff;
+}
+
+.box {
+	padding: 10px;
+}
