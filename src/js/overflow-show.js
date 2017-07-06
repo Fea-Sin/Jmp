@@ -17,7 +17,7 @@
 	}
 
 	function _onMouseLeave(element) {
-		$(element).next(".pop-layer").hide();
+		$(element).next(".pop-layer").remove();
 	}
 
 	function _onMouseMove(element) {
@@ -26,6 +26,7 @@
 
 	function _setPopLayer(element, settings) {
 		var popWidth = settings.popWidth;
+		var popTop = settings.popTop;
 		var $popLayer = $(element).next(".pop-layer");
 		var label = $popLayer.length;
 		if (!label) {
@@ -39,7 +40,7 @@
 			var popLayer = $(element).next(".pop-layer")[0];	
 			popLayer.style.width = popWidth + 'px';
 			$(popLayer).text(text);
-			popLayer.style.top = (top + 30) + 'px';
+			popLayer.style.top = (top + popTop) + 'px';
 		} else {
 			$popLayer.show();
 		}

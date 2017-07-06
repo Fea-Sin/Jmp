@@ -14,7 +14,31 @@ npm start
 ## contain plugin
 
 - tool-tip
+
 - overflow-show
+
+### API
+
+实例：
+```html
+<div class="overflow-show">
+	<span id="text">
+		This is the content text, this text normally very long. So, the plugin will cutdowm the 
+		text and your mouse moveon the poplayer will show.
+	</span>
+</div>
+```
+```js
+$("#example").overflowShow('init', {
+	width: 20,
+	popWidth: 400,
+	popTop: 10
+})
+```
+`width: 20`: Text over width value will be cutdown.
+`popWidth: 400`: Set the poplayer width.
+`popTop: 20` : The poplayer style position is absolute, popTop value will set the top position against the element.  
+
 
 ## From sources
 ```
