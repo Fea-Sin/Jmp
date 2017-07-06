@@ -35,11 +35,11 @@ $("#example").overflowShow('init', {
 	popTop: 10
 })
 ```
-`width: 20`: [width: Number/String]Text over width value will be cutdown.
+`width: 20`:  [Number/String]Text over width value will be cutdown.
 
-`popWidth: 400`: [width: Number/String] Set the poplayer width.
+`popWidth: 400`:  [Number/String] Set the poplayer width.
 
-`popTop: 20` : [width: Number] The poplayer style position is absolute, popTop value will set the top position against the element.  
+`popTop: 20` :  [Number] The poplayer style position is absolute, popTop value will set the top position against the element.  
 
 
 ## From sources
