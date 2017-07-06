@@ -35,6 +35,8 @@ $("#example").overflowShow('init', {
 	popTop: 10
 })
 ```
+![](img/overflowShowDemo.png)
+
 `width: 20`:  [Number/String]Text over width value will be cutdown.
 
 `popWidth: 400`:  [Number/String] Set the poplayer width.
