@@ -44,7 +44,7 @@
   function _setRightMode(element, eleBoxWidth, eleObj, settings) {
 		var box = element.children[1];
 		box.style.left = '-' + (eleBoxWidth - eleObj.touchWidth) + 'px';
-		leftPosition = eleObj.eleFontSize + eleBoxWidth - (eleObj.touchWidth / 2);
+		var leftPosition = eleObj.eleFontSize + eleBoxWidth - (eleObj.touchWidth / 2);
 		$(element).addClass('arrow-right-mode');
 		_setArrowBox(element, settings, leftPosition);
   }

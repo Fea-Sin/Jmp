@@ -8,6 +8,7 @@ const concat = require('gulp-concat');
 const notify = require('gulp-notify');
 const uglify = require('gulp-uglify');
 const gutil = require('gulp-util');
+const eslint = require('gulp-eslint');
 
 gulp.task('less-css', function() {
 	/**
@@ -24,7 +25,9 @@ gulp.task('less-css', function() {
 						 .pipe(less())
 						 .pipe(sourcemaps.write())
 						 .pipe(autoprefixer(autoperfixerOptions))
-						 .pipe(concat('style.css'))
+						 .pipe(concat('jmp.css'))
+						 .pipe(gulp.dest('./dist/css'))
+						 .pipe(rename('style.css'))
 						 .pipe(gulp.dest('./dist/css'))
 						 .pipe(rename({suffix: '.min'}))
 						 .pipe(cssmin())
@@ -40,7 +43,20 @@ gulp.task('js', function() {
 						 .pipe(uglify())
 						 .on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })						 
 						 .pipe(gulp.dest('./dist/js'))
+						 .pipe(rename('jmp.min.js'))
+						 .pipe(gulp.dest('./dist/js'))
 						 .pipe(notify({message: 'js 处理完成'}))
+})
+
+gulp.task('lint', function() {
+	return gulp.src(['./src/js/*.js', '!vendor/**'])
+						 .pipe(eslint({
+						 		configFile: './.eslint.js',
+						 		fix: true
+						 }))
+						 .pipe(eslint.format())
+						 .pipe(eslint.failAfterError())
+						 .pipe(notify({message: 'ESLint 检查完成'}))
 })
 
 gulp.task('watch', function() {
@@ -48,10 +64,11 @@ gulp.task('watch', function() {
 	// css 监控
 	gulp.watch(['./src/less/**/*.less'], ['less-css'])
 	// js 监控
-	gulp.watch(['./src/js/*.js'], ['js'])
+	gulp.watch(['./src/js/*.js'], ['js', 'lint'])
+
 })
 
 gulp.task('default', function() {
 	console.log('构建开始');
-	gulp.start('less-css', 'js', 'watch');
+	gulp.start('less-css', 'js', 'lint', 'watch');
 })
