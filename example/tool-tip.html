@@ -37,8 +37,15 @@
 			"text": "这里是传入的提示文字信息！本来可以更长测试界面如何显示，以及后续需要如何改进。",
 			"width": "360"
 		})
-		$("#oneTouch").click(function() {
+		$("#oneTouch").click(function(event) {
 			$("#tipOne").toolTip('hideShow')
+			event.stopPropagation()
+		})
+		/*
+		 * 点击 body tip disappear
+		 */
+		$("body").click(function() {
+			$("#tipOne").toolTip('hide')
 		})
 
 		$("#tipTwo").toolTip('init', {

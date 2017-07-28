@@ -101,6 +101,12 @@
 				var box = element.children[1];
 				$(box).toggle();
 			})
+		},
+		hide: function() {
+			return this.each(function(index, element) {
+				var box = element.children[1];
+				$(box).hide();
+			})			
 		}
 	}
 
